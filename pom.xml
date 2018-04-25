@@ -60,8 +60,7 @@
 				<version>2.5.3</version>
 				<configuration>
 				    <useReleaseProfile>false</useReleaseProfile>
-					<releaseProfiles>release</releaseProfiles>
-					<tagNameFormat>v@{project.version}-RELEASE</tagNameFormat>
+					<tagNameFormat>gragas-@{project.version}-RELEASE</tagNameFormat>
 				</configuration>
 			</plugin>
 		</plugins>
