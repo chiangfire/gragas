@@ -18,5 +18,5 @@ target/
 *.iws
 
 # maven-release-plugin
-#*.releaseBackup
-#release.properties
+*.releaseBackup
+release.properties
