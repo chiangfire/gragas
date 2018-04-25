@@ -61,7 +61,7 @@
 				<configuration>
 				    <useReleaseProfile>false</useReleaseProfile>
 					<releaseProfiles>release</releaseProfiles>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<tagNameFormat>v@{project.version}-RELEASE</tagNameFormat>
 				</configuration>
 			</plugin>
 		</plugins>
