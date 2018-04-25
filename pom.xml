@@ -6,7 +6,7 @@
 		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>gragas</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>gragas</name>
 	<url />
@@ -15,7 +15,7 @@
 		<connection>scm:git:git://github.com/jiangcihuo/gragas.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/gragas.git</developerConnection>
 		<url>https://github.com/jiangcihuo/gragas</url>
-		<tag>HEAD</tag>
+		<tag>0.0.1-RELEASE</tag>
 	</scm>
 
 	<dependencies>
