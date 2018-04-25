@@ -36,32 +36,6 @@
 
 	<build>
 		<plugins>
-			<!-- 自动部署到远程仓库 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<retryFailedDeploymentCount>10</retryFailedDeploymentCount>
-					<!-- 跳过部署到远程仓库，如果有搭建私库就不要跳过了 -->
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-			<!-- release版本自动构建，构建流程如下： -->
-			<!-- mvn release:clean #清理 -->
-			<!-- mvn release:prepare #准备发布，这个时候会有一个交互过程。 -->
-			<!-- mvn release:perform #发布，打包 -->
-			<!-- 详情：http://maven.apache.org/maven-release/maven-release-plugin/index.html -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>${maven-release-plugin.version}</version>
-				<configuration>
-					<useReleaseProfile>false</useReleaseProfile>
-					<!-- 每个模块获得与父POM相同的版本 -->
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
