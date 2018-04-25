@@ -36,6 +36,16 @@
 
 	<build>
 		<plugins>
+			<!-- 自动部署到远程仓库 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<retryFailedDeploymentCount>10</retryFailedDeploymentCount>
+					<!-- 跳过部署到远程仓库，如果有搭建私库就不要跳过了 -->
+					<skip>true</skip>
+				</configuration>
+			</plugin>
 			<!-- release版本自动构建，构建流程如下： -->
 			<!-- mvn release:clean #清理 -->
 			<!-- mvn release:prepare #准备发布，这个时候会有一个交互过程。 -->
