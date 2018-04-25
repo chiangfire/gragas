@@ -15,7 +15,7 @@
 		<connection>scm:git:git://github.com/jiangcihuo/gragas.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/gragas.git</developerConnection>
 		<url>https://github.com/jiangcihuo/gragas</url>
-		<tag>HEAD</tag>
+		<tag>0.0.1-RELEASE</tag>
 	</scm>
 
 	<dependencies>
