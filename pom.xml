@@ -13,6 +13,13 @@
 	<name>gragas</name>
 	<url></url>
 
+	<scm>
+		<connection>scm:git:git://github.com/jiangcihuo/gragas.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jiangcihuo/gragas.git</developerConnection>
+		<url>https://github.com/jiangcihuo/gragas</url>
+		<tag>HEAD</tag>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.firecode</groupId>
@@ -22,10 +29,10 @@
 			<groupId>com.firecode</groupId>
 			<artifactId>kabouros-cassandra</artifactId>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency> -->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -46,6 +53,23 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-api</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
