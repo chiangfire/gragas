@@ -59,6 +59,8 @@
 				<version>2.5.3</version>
 				<configuration>
 				    <useReleaseProfile>false</useReleaseProfile>
+				    <!-- 每个模块获得与父POM相同的版本 -->
+				    <autoVersionSubmodules>true</autoVersionSubmodules>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
 			</plugin>
