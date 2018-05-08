@@ -1,0 +1,76 @@
+<div>
+	<Row>
+	    <i-col :xs="24" :sm="12">
+		    <div class="app-breadcrumb">
+		       <span v-for="(name,index) in nodeNames">
+		            <span v-bind:class="{'app-hover-underline':(index !== (nodeNames.length-1))}" @click.stop="linkNode(name)">{{name}}</span>
+		            <span class="breadcrumb-item-separator">/</span>
+		        </span> 
+		    </div>
+	    </i-col>
+	    <i-col :xs="24" :sm="12">
+		    <ButtonGroup class="app-vertical-right">
+		        <Button>导入</Button>
+		        <Button @click.stop="propertyModal = true">添加</Button>
+		        <Button @click.stop="updateProperty" :disabled="checkPropertys.length !== 1">修改</Button>
+		        <Button @click.stop="remove()" :disabled="checkPropertys.length === 0">删除</Button>
+	        </ButtonGroup>
+	    </i-col>
+	</Row>
+	<Row>
+	    <i-col span="7">
+	        <div class="app-vertical-top config-manager-tree">
+		       <div class="ivu-tree">
+		           <ul class="ivu-tree-children">
+		               <li>
+		                   <span class="app-tree-node">
+		                       <span>
+		                           <Icon type="ios-folder-outline" class="app-tree-node-icon"></Icon>
+		                           <span>{{node.name}}</span>
+		                       </span>
+		                       <span class="app-tree-node-operation" style="right:2px;">
+	                               <Button @click.stop="nodeModal=true" type="ghost" size="small" class="app-tree-node-button">添加</Button>
+		                       </span>
+		                   </span>
+		                   <ul class="ivu-tree-children" v-for="item in node.childrens">
+		                       <li>
+		                           <span class="app-tree-node">
+		                               <span>
+		                                   <Icon type="ios-paper-outline" class="app-tree-node-icon"></Icon>
+		                                   <span class="app-hover-underline">{{item.name}}</span>
+		                               </span>
+		                               <span class="app-tree-node-operation">
+		                                   <Button @click.stop="remove(item)" type="ghost" size="small">删除</Button>
+		                               </span>
+		                           </span>
+		                       </li>
+		                   </ul>
+		               </li>
+		           </ul>
+		       </div>
+	        </div>
+	    </i-col>
+	    <i-col span="16" offset="1">
+		    <div class="app-vertical-top">
+		        <Table ref="propertySelection" border :columns="propertyColumns" :data="node.propertys" @on-row-click="rowClick" @on-selection-change="selectionChange" class="custom-table-cell table-small"></Table>
+	        </div>
+	    </i-col>
+	</Row>
+	<Modal v-model="nodeModal" title="添加节点" class="modal-small" @on-ok="append('nodeForm','nodeModal')" :loading="loading" @on-cancel="cancelForm('nodeForm')">
+	    <Form  ref="nodeForm" :model="nodeForm" label-position="left" :label-width="50" :rules="ruleValidate">
+	        <FormItem label="Name" prop="name">
+	            <Input v-model="nodeForm.name" :autofocus="true"></Input>
+	        </FormItem>
+	    </Form>
+	</Modal>
+    <Modal v-model="propertyModal" title="添加属性" @on-ok="append('propertyForm','propertyModal')" @on-cancel="cancelForm('propertyForm')" class="modal-small">
+	    <Form  ref="propertyForm" :model="propertyForm" label-position="left" :label-width="50" :rules="ruleValidate">
+	        <FormItem label="Name" prop="name">
+	            <Input v-model="propertyForm.name" :autofocus="true"></Input>
+	        </FormItem>
+	        <FormItem label="Value" prop="value">
+	            <Input v-model="propertyForm.value" type="textarea" :autosize="{minRows: 5,maxRows: 10}"></Input>
+	        </FormItem>
+	    </Form>
+    </Modal>
+</div>

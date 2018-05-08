@@ -1,0 +1,30 @@
+<div class="app-header-frame">
+	<Row>
+		<i-col :xs="8" span="3">
+		    <a href="javascript:void(0);">
+		        <h2 class="app-header-logo app-vertical-left margin">Gragas</h2>
+		    </a>
+	    </i-col>
+	    <i-col :xs="13" :sm="{span:3,push:13}">
+	        <a href="javascript:void(0);" class="app-vertical-right margin">
+	            <h3>
+	               <span class="app-header-user"><Icon type="android-person"></Icon></span>
+	           </h3>
+	        </a>
+	    </i-col>
+	    <i-col :xs="3" :sm="0">
+	        <a @click.stop="showMenu = !showMenu" href="javascript:void(0);" class="app-vertical-right margin">
+	            <h1>
+	                <Icon type="android-menu"></Icon>
+	           </h1>
+	        </a>
+	    </i-col>
+	    <div v-show="showMenu" class="app-header-nav">
+	        <i-col :xs="{span:24,offset:0}" :sm="{span:2,offset:10}">
+	            <router-link active-class="menu-active" to="/config">
+	                <span>配置中心</span>
+	            </router-link>
+	        </i-col>
+	    </div>
+	</Row>
+</div>

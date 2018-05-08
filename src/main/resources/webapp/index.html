@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>gragas</title>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link href="w/assets/css/common.css" rel="stylesheet">
+<link href="w/assets/css/iview.css" rel="stylesheet">
+<script src="w/assets/js/require.js" async data-main="./main.js"></script>
+</head>
+<body>
+    <div id="gragas-app">
+	    <Row class="app-header-frame">
+		    <i-col :xs="appFrame.xs" :lg="appFrame.lg">
+		        <headerbar></headerbar>
+		    </i-col>
+	    </Row>
+	    <Row>
+		    <i-col :xs="appFrame.xs" :lg="appFrame.lg">
+		        <div class="app-container app-vertical-padding">
+		            <router-view></router-view>
+		        </div>
+		    </i-col>
+	    </Row>
+    </div>
+</body>
+</html>
